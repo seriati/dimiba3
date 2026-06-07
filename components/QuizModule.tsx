@@ -6,8 +6,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BrainCircuit, Play, CheckCircle2, XCircle, RefreshCw, Volume2, VolumeX, ArrowRight, ClipboardCheck } from 'lucide-react';
-import { QUIZ_DATA } from '../data';
-import { playClickSound, playSuccessSound, playErrorSound, playFanfareSound, isSoundEnabled, toggleSound } from '../utils/audio';
+import { QUIZ_DATA } from '../src/data';
+import { playClickSound, playSuccessSound, playErrorSound, playFanfareSound, isSoundEnabled, toggleSound } from '../src/utils/audio';
 
 // Micro Confetti Exploder for Positive Reinforcement
 function ConfettiExplosion() {
