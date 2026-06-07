@@ -9,8 +9,8 @@ import {
   RefreshCw, GitCompare, Package, Coins, Hash, Wallet, Sprout, ShoppingBag, 
   Search, BookOpen, Layers, Trophy, CheckCircle2, XCircle, ArrowRight, Star
 } from 'lucide-react';
-import { VOCABULARY_LIST } from '../data';
-import { playClickSound, playSuccessSound, playErrorSound } from '../utils/audio';
+import { VOCABULARY_LIST } from '../src/data';
+import { playClickSound, playSuccessSound, playErrorSound } from '../src/utils/audio';
 
 // Helper to map string icon keys to lucide icons
 const IconMapper = ({ name, className }: { name: string; className?: string }) => {
