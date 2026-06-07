@@ -11,12 +11,12 @@ import {
 
 import { ActiveTab, StoryChunk } from './types';
 import { STORY_CHUNKS } from './data';
-import { playClickSound, playSuccessSound, playErrorSound, playFanfareSound } from './utils/audio';
+import { playClickSound, playSuccessSound, playErrorSound, playFanfareSound } from './utils/audio.ts';
 
-import StoryIllustrations from './components/StoryIllustrations';
-import CelenganGame from './components/CelenganGame';
-import KamusSaku from './components/KamusSaku';
-import QuizModule from './components/QuizModule';
+import StoryIllustrations from './components/StoryIllustrations.tsx';
+import CelenganGame from './components/CelenganGame.ttsx';
+import KamusSaku from './components/KamusSaku.tsx';
+import QuizModule from './components/QuizModule.tsx';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('home');
