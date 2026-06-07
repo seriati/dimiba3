@@ -426,13 +426,15 @@ export default function CelenganGame() {
                         }}
                         referrerPolicy="no-referrer"
                       />
-                      <div className="absolute inset-0 bg-amber-500/10 flex flex-col items-center justify-center text-center p-1 z-10">
+                      <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-2">
                         <img 
                           src="/images/kerajinanmanik.jpg" 
                           alt="Kerajinan Manik Dayak"
-                          className="w-20 h-20 object-contain rounded-lg shadow-md"
+                          className="w-full h-full object-cover rounded-lg"
                         />
-                        <p className="text-[8px] font-black leading-tight mt-1 text-amber-900">Celengan Dayak</p>
+                        <div className="absolute bottom-2 left-0 right-0">
+                          <p className="text-[8px] font-black leading-tight text-amber-900 bg-white/80 px-2 py-1 rounded">Celengan Dayak</p>
+                        </div>
                       </div>
                     </div>
                   </div>
