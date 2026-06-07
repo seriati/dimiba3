@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeftRight, Ban, CloudRain, Flame, Check, HelpCircle, Eye, Info, Sparkles } from 'lucide-react';
-import { playClickSound, playSuccessSound, playErrorSound } from '../utils/audio';
+import { playClickSound, playSuccessSound, playErrorSound } from '../src/utils/audio';
 
 interface IllustrationProps {
   type: 'barter_simple' | 'barter_mismatch' | 'money_intro' | 'money_features';
