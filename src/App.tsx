@@ -11,7 +11,7 @@ import {
 
 import { ActiveTab, StoryChunk } from './types';
 import { STORY_CHUNKS } from './data';
-import { playClickSound, playSuccessSound, playErrorSound, playFanfareSound } from './audio.ts';
+import { playClickSound, playSuccessSound, playErrorSound, playFanfareSound } from '.src/utils/audio.ts';
 
 import StoryIllustrations from './StoryIllustrations.tsx';
 import CelenganGame from './CelenganGame.ttsx';
