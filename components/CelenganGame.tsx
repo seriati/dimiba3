@@ -6,8 +6,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Store, Wallet, Coins, RefreshCw, Trash2, CheckCircle, ArrowRight, Award, HelpCircle } from 'lucide-react';
-import { GAME_LEVELS } from '../data';
-import { playClickSound, playSuccessSound, playErrorSound, playFanfareSound } from '../utils/audio';
+import { GAME_LEVELS } from '../src/data';
+import { playClickSound, playSuccessSound, playErrorSound, playFanfareSound } from '../src/utils/audio';
 
 // Visual designs for coins/bills to mimic real Indonesian money
 const COINS = [
