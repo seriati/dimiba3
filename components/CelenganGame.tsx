@@ -413,9 +413,7 @@ export default function CelenganGame() {
                       Visual Tradisional Borneo
                     </span>
                     <p className="text-[11px] font-bold text-slate-800">Celengan Manik Dayak Indonesia</p>
-                    <p className="text-[9px] text-slate-500 leading-relaxed font-semibold">
-                      Anda bisa mengganti mockup di kanan ini dengan menaruh berkas <code className="bg-amber-100 text-amber-950 px-1 rounded">celengan-dayak.png</code> di folder utama <code className="bg-amber-100 text-amber-950 px-1 rounded">public/images/</code>.
-                    </p>
+                    
                   </div>
                   <div className="md:col-span-4 relative rounded-2xl overflow-hidden bg-white/80 p-1 border-2 border-orange-200">
                     <div className="relative rounded-xl overflow-hidden bg-slate-100 aspect-video flex items-center justify-center">
@@ -431,7 +429,7 @@ export default function CelenganGame() {
                       <div className="absolute inset-0 bg-amber-500/10 flex flex-col items-center justify-center text-center p-1 pointer-events-none">
                         <span className="text-xl filter drop-shadow">📿</span>
                         <p className="text-[8px] font-black leading-tight mt-0.5">Celengan Dayak</p>
-                        <span className="text-[7px] text-amber-800 font-mono">/images/celengan-dayak.png</span>
+                        <span className="text-[7px] text-amber-800 font-mono">/images/kerajinanmanik.jpg</span>
                       </div>
                     </div>
                   </div>
