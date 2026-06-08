@@ -23,6 +23,14 @@ const BILLS = [
   { value: 10000, label: 'Rp10.000', color: 'bg-purple-200 text-purple-800 font-extrabold border-purple-400 border-b-4', textCol: 'text-purple-800' }
 ];
 
+const LEVEL_IMAGES = [
+  { src: '/images/celengan-dayak-1.jpg', alt: 'Gambar tradisional Dayak untuk level 1' },
+  { src: '/images/celengan-dayak-2.jpg', alt: 'Gambar tradisional Dayak untuk level 2' },
+  { src: '/images/celengan-dayak-3.jpg', alt: 'Gambar tradisional Dayak untuk level 3' },
+  { src: '/images/celengan-dayak-4.jpg', alt: 'Gambar tradisional Dayak untuk level 4' },
+  { src: '/images/celengan-dayak-5.jpg', alt: 'Gambar tradisional Dayak untuk level 5' }
+];
+
 export default function CelenganGame() {
   const [levelIdx, setLevelIdx] = useState(0);
   const [selectedChange, setSelectedChange] = useState<{ value: number; key: number }[]>([]);
@@ -406,34 +414,28 @@ export default function CelenganGame() {
                 </div>
 
                 {/* DAYAK THEMED GRAPHIC TEMPLATE FOR THE SIMULATOR */}
-                <div className="mt-4 p-2 bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-3xl grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
-                  <div className="avatar pr-1 md:col-span-8 space-y-1 pl-2">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-orange-700 bg-orange-100 px-2 py-0.5 rounded-md">
-                      Visual Tradisional Borneo
-                    </span>
-                    <p className="text-[11px] font-bold text-slate-800">Celengan Manik Dayak Indonesia</p>
-                    
-                  </div>
-                  <div className="md:col-span-4 relative rounded-2xl overflow-hidden bg-white/80 p-1 border-2 border-orange-200">
-                    <div className="relative rounded-xl overflow-hidden bg-slate-100 aspect-video flex items-center justify-center">
-                      <img 
-                        src="/images/celengan-dayak.png" 
-                        alt="Hiasan Dayak Celengan"
-                        className="w-full h-full object-cover"
+                <div className="mt-4 p-4 bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-3xl shadow-sm">
+                  <div className="space-y-3">
+                    <div>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-orange-700 bg-orange-100 px-2 py-0.5 rounded-md">
+                        Visual Tradisional Borneo
+                      </span>
+                      <p className="text-[11px] font-bold text-slate-800 mt-2">Celengan Manik Dayak Indonesia</p>
+                    </div>
+
+                    <div className="relative rounded-[2rem] overflow-hidden bg-slate-100 border border-orange-200 shadow-sm">
+                      <img
+                        src={LEVEL_IMAGES[levelIdx]?.src}
+                        alt={LEVEL_IMAGES[levelIdx]?.alt}
+                        className="w-full h-72 md:h-80 object-cover"
                         onError={(e) => {
-                          e.currentTarget.style.display = 'none';
+                          e.currentTarget.src = '/images/celengan-dayak.png';
                         }}
                         referrerPolicy="no-referrer"
                       />
-                      <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-2">
-                        <img 
-                          src="/images/kerajinanmanik.jpg" 
-                          alt="Kerajinan Manik Dayak"
-                          className="w-full h-full object-cover rounded-lg"
-                        />
-                        <div className="absolute bottom-2 left-0 right-0">
-                          <p className="text-[8px] font-black leading-tight text-amber-900 bg-white/80 px-2 py-1 rounded">Celengan Dayak</p>
-                        </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
+                      <div className="absolute left-4 bottom-4 text-white font-black text-sm md:text-base drop-shadow-lg">
+                        Level {levelIdx + 1} / 5
                       </div>
                     </div>
                   </div>
