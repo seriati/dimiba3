@@ -33,6 +33,17 @@ const LEVEL_IMAGES = [
 
 export default function CelenganGame() {
   const [levelIdx, setLevelIdx] = useState(0);
+  const [levelMeta, setLevelMeta] = useState<Array<{title: string; description: string; source: string}>>(() => {
+    try {
+      const raw = localStorage.getItem('celengan_level_meta');
+      if (raw) return JSON.parse(raw);
+    } catch (e) {
+      // ignore
+    }
+    return LEVEL_IMAGES.map(() => ({ title: '', description: '', source: '' }));
+  });
+  const [isEditingMeta, setIsEditingMeta] = useState(false);
+  const [editDraft, setEditDraft] = useState<{title: string; description: string; source: string}>({ title: '', description: '', source: '' });
   const [selectedChange, setSelectedChange] = useState<{ value: number; key: number }[]>([]);
   const [feedback, setFeedback] = useState<'none' | 'success' | 'fail' | 'empty'>('none');
   const [digitalSavings, setDigitalSavings] = useState(0);
@@ -53,6 +64,28 @@ export default function CelenganGame() {
       setDigitalSavings(parseInt(saved, 10));
     }
   }, []);
+
+  // keep draft in sync when level changes
+  useEffect(() => {
+    setEditDraft(levelMeta[levelIdx] || { title: '', description: '', source: '' });
+  }, [levelIdx, levelMeta]);
+
+  const saveLevelMeta = () => {
+    const updated = [...levelMeta];
+    updated[levelIdx] = { ...editDraft };
+    setLevelMeta(updated);
+    try {
+      localStorage.setItem('celengan_level_meta', JSON.stringify(updated));
+    } catch (e) {
+      // ignore
+    }
+    setIsEditingMeta(false);
+  };
+
+  const cancelEditMeta = () => {
+    setEditDraft(levelMeta[levelIdx] || { title: '', description: '', source: '' });
+    setIsEditingMeta(false);
+  };
 
   const selectCurrency = (val: number) => {
     playClickSound();
@@ -427,7 +460,7 @@ export default function CelenganGame() {
                       <img
                         src={LEVEL_IMAGES[levelIdx]?.src}
                         alt={LEVEL_IMAGES[levelIdx]?.alt}
-                        className="w-full h-72 md:h-80 object-cover"
+                        className="w-full h-56 md:h-80 lg:h-96 object-cover"
                         onError={(e) => {
                           e.currentTarget.src = '/images/celengan-dayak.png';
                         }}
