@@ -141,40 +141,6 @@ export default function CelenganGame() {
         </div>
       </div>
 
-      <div className="bg-white rounded-[2.5rem] p-6 border border-amber-200 shadow-sm space-y-6">
-        <div className="space-y-3">
-          <div className="inline-flex items-center gap-3 rounded-full bg-amber-100 px-4 py-2 text-amber-900 font-black text-sm shadow-sm">
-            <span>📜</span>
-            <span>KEARIFAN LOKAL</span>
-          </div>
-          <h3 className="text-2xl md:text-3xl font-baloo font-black text-slate-900">
-            Tahukah kamu?
-          </h3>
-          <p className="text-sm md:text-base text-slate-700 leading-relaxed font-semibold">
-            "Adil Ka Talino, Bacuramin Ka Saruga, Basengat Ka Jubata" merupakan salam khas masyarakat Dayak. Salam ini biasanya diucapkan sebelum menyampaikan pidato atau sambutan. Maknanya mengajak kita untuk bersikap adil kepada teman, melakukan kebaikan, dan selalu bersyukur kepada Tuhan.
-          </p>
-        </div>
-
-        <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-sm bg-slate-100">
-          <img
-            src="/images/jokowi-salam-dayak.jpg"
-            alt="Pak Jokowi mengucapkan salam Dayak saat pidato"
-            className="w-full h-auto object-cover"
-            onError={(e) => {
-              e.currentTarget.src = '/images/kerajinanmanik.jpg';
-            }}
-          />
-          <div className="bg-white px-4 py-3">
-            <p className="text-sm font-bold text-slate-900">
-              Pak Jokowi mengucapkan salam Dayak saat pidato.
-            </p>
-            <p className="text-xs text-slate-500 mt-1">
-              Sumber: tempo.co
-            </p>
-          </div>
-        </div>
-      </div>
-
       {/* Honesty Level meter of Rumah Betang */}
       <div className="bg-white rounded-2xl p-4 border border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 shadow-xs">
         <div className="text-left space-y-1">
@@ -321,9 +287,8 @@ export default function CelenganGame() {
                 <span className="text-[10px] font-black text-amber-800 bg-amber-200/50 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                   📖 Kearifan Lokal
                 </span>
-                <p className="font-baloo font-bold text-amber-950 text-xs">Honesty in Dayak Trade</p>
                 <p className="text-[11px] text-slate-600 leading-relaxed font-semibold">
-                  Masyarakat Dayak menjunjung kearifan saling mengasuh. Bertransaksi jujur bukan semata-mata mencari untung, melainkan membagikan rezeki persaudaraan secara tulus.
+                  Tahukah kamu? "Adil Ka Talino, Bacuramin Ka Saruga, Basengat Ka Jubata" merupakan salam khas masyarakat Dayak. Salam ini biasanya diucapkan sebelum menyampaikan pidato atau sambutan. Maknanya mengajak kita untuk bersikap adil kepada teman, melakukan kebaikan, dan selalu bersyukur kepada Tuhan.
                 </p>
               </div>
 
