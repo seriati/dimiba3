@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export type ActiveTab = 'home' | 'materi' | 'game' | 'kuis' | 'kamus' | 'tujuan' | 'profil';
+export type ActiveTab = 'home' | 'materi' | 'game' | 'kuis' | 'tujuan' | 'profil';
 
 export interface StoryChunk {
   id: number;

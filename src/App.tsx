@@ -15,7 +15,6 @@ import { playClickSound, playSuccessSound, playErrorSound, playFanfareSound } fr
 
 import StoryIllustrations from '../components/StoryIllustrations.tsx';
 import CelenganGame from '../components/CelenganGame.tsx';
-import KamusSaku from '../components/KamusSaku.tsx';
 import QuizModule from '../components/QuizModule.tsx';
 
 export default function App() {
@@ -163,7 +162,6 @@ export default function App() {
     { id: 'materi', label: 'Materi Cerita', icon: BookOpen, color: 'text-rose-500 bg-rose-50 border-rose-100 hover:bg-rose-100/35' },
     { id: 'game', label: 'Celengan Digital', icon: Coins, color: 'text-amber-500 bg-amber-50 border-amber-100 hover:bg-amber-100/35' },
     { id: 'kuis', label: 'Uji Kemampuan', icon: BrainCircuit, color: 'text-emerald-500 bg-emerald-50 border-emerald-100 hover:bg-emerald-100/35' },
-    { id: 'kamus', label: 'Kamus Saku', icon: BookMarked, color: 'text-purple-500 bg-purple-50 border-purple-100 hover:bg-purple-100/35' },
     { id: 'profil', label: 'Profil Pengembang', icon: User, color: 'text-indigo-500 bg-indigo-50 border-indigo-100 hover:bg-indigo-100/35' }
   ] as const;
 
@@ -369,7 +367,6 @@ export default function App() {
                           {item.id === 'materi' && 'Nikmati cerpen komik interaktif.'}
                           {item.id === 'game' && 'Simulasi kembalian Toko Kelayau.'}
                           {item.id === 'kuis' && 'Uji nilai dan pembahasan soal.'}
-                          {item.id === 'kamus' && 'Flashcard mengkilau terjemahan.'}
                           {item.id === 'tujuan' && 'Tengok hasil belajar ideal.'}
                           {item.id === 'profil' && 'Profil pengembang & ucapan terima kasih.'}
                         </p>
@@ -651,9 +648,6 @@ export default function App() {
       case 'kuis':
         return <QuizModule />;
 
-      case 'kamus':
-        return <KamusSaku />;
-
       case 'tujuan':
         return (
           <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="space-y-6 max-w-2xl mx-auto pb-12">
@@ -764,7 +758,7 @@ export default function App() {
                   <span>💡</span> Tentang Pengembang
                 </h4>
                 <p className="text-xs text-slate-600 leading-relaxed font-semibold">
-                  Media ini dirancang dan dikembangkan dengan penuh perhatian untuk meningkatkan literasi keuangan usia dini di jenjang Sekolah Dasar. Melalui materi cerita fabel interaktif (DIMIBA), celengan kasir digital, kamus finansial cilik, serta modul kuis asyik, siswa dapat mengeksplorasi ilmu ekonomi yang bermutu tinggi dan inklusif.
+                  Media ini dirancang dan dikembangkan dengan penuh perhatian untuk meningkatkan literasi keuangan usia dini di jenjang Sekolah Dasar. Melalui materi cerita fabel interaktif (DIMIBA), celengan kasir digital, serta modul kuis asyik, siswa dapat mengeksplorasi ilmu ekonomi yang bermutu tinggi dan inklusif.
                 </p>
                 <div className="grid grid-cols-2 gap-4 text-xs pt-3 border-t border-indigo-100/30 font-bold">
                   <div>
@@ -1013,13 +1007,6 @@ export default function App() {
                     </p>
                   </div>
 
-                  <div className="bg-white/95 p-3 rounded-2xl flex flex-col items-center text-center space-y-1 shadow-xs border border-orange-200">
-                    <span className="text-2xl">📚</span>
-                    <strong className="text-xs font-extrabold text-purple-600 block">5. Kamus Saku</strong>
-                    <p className="text-[11px] font-bold text-slate-600 leading-tight">
-                      Putar flashcard atau main tebak kata seru berhadiah koin!
-                    </p>
-                  </div>
                 </motion.div>
               )}
             </AnimatePresence>
