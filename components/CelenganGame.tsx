@@ -62,27 +62,56 @@ const LEVEL_IMAGES_PER_LEVEL = [
   ]
 ];
 
-// Default metadata for each level (editable in-code). The user wanted metadata added from code,
-// so edit these values directly to prefill title/description/source for each level.
-const DEFAULT_LEVEL_META = [
-  { title: 'Judul Level 1', description: 'Deskripsi untuk level 1.', source: 'Sumber 1' },
-  { title: 'Judul Level 2', description: 'Deskripsi untuk level 2.', source: 'Sumber 2' },
-  { title: 'Judul Level 3', description: 'Deskripsi untuk level 3.', source: 'Sumber 3' },
-  { title: 'Judul Level 4', description: 'Deskripsi untuk level 4.', source: 'Sumber 4' },
-  { title: 'Judul Level 5', description: 'Deskripsi untuk level 5.', source: 'Sumber 5' }
+// Default metadata per level per photo (editable in-code). Each level contains 5 photo metadata objects.
+const DEFAULT_LEVEL_META_PER_LEVEL = [
+  [
+    { title: 'Judul L1 Foto1', description: 'Deskripsi L1 Foto1', source: 'Sumber L1-1' },
+    { title: 'Judul L1 Foto2', description: 'Deskripsi L1 Foto2', source: 'Sumber L1-2' },
+    { title: 'Judul L1 Foto3', description: 'Deskripsi L1 Foto3', source: 'Sumber L1-3' },
+    { title: 'Judul L1 Foto4', description: 'Deskripsi L1 Foto4', source: 'Sumber L1-4' },
+    { title: 'Judul L1 Foto5', description: 'Deskripsi L1 Foto5', source: 'Sumber L1-5' }
+  ],
+  [
+    { title: 'Judul L2 Foto1', description: 'Deskripsi L2 Foto1', source: 'Sumber L2-1' },
+    { title: 'Judul L2 Foto2', description: 'Deskripsi L2 Foto2', source: 'Sumber L2-2' },
+    { title: 'Judul L2 Foto3', description: 'Deskripsi L2 Foto3', source: 'Sumber L2-3' },
+    { title: 'Judul L2 Foto4', description: 'Deskripsi L2 Foto4', source: 'Sumber L2-4' },
+    { title: 'Judul L2 Foto5', description: 'Deskripsi L2 Foto5', source: 'Sumber L2-5' }
+  ],
+  [
+    { title: 'Judul L3 Foto1', description: 'Deskripsi L3 Foto1', source: 'Sumber L3-1' },
+    { title: 'Judul L3 Foto2', description: 'Deskripsi L3 Foto2', source: 'Sumber L3-2' },
+    { title: 'Judul L3 Foto3', description: 'Deskripsi L3 Foto3', source: 'Sumber L3-3' },
+    { title: 'Judul L3 Foto4', description: 'Deskripsi L3 Foto4', source: 'Sumber L3-4' },
+    { title: 'Judul L3 Foto5', description: 'Deskripsi L3 Foto5', source: 'Sumber L3-5' }
+  ],
+  [
+    { title: 'Judul L4 Foto1', description: 'Deskripsi L4 Foto1', source: 'Sumber L4-1' },
+    { title: 'Judul L4 Foto2', description: 'Deskripsi L4 Foto2', source: 'Sumber L4-2' },
+    { title: 'Judul L4 Foto3', description: 'Deskripsi L4 Foto3', source: 'Sumber L4-3' },
+    { title: 'Judul L4 Foto4', description: 'Deskripsi L4 Foto4', source: 'Sumber L4-4' },
+    { title: 'Judul L4 Foto5', description: 'Deskripsi L4 Foto5', source: 'Sumber L4-5' }
+  ],
+  [
+    { title: 'Judul L5 Foto1', description: 'Deskripsi L5 Foto1', source: 'Sumber L5-1' },
+    { title: 'Judul L5 Foto2', description: 'Deskripsi L5 Foto2', source: 'Sumber L5-2' },
+    { title: 'Judul L5 Foto3', description: 'Deskripsi L5 Foto3', source: 'Sumber L5-3' },
+    { title: 'Judul L5 Foto4', description: 'Deskripsi L5 Foto4', source: 'Sumber L5-4' },
+    { title: 'Judul L5 Foto5', description: 'Deskripsi L5 Foto5', source: 'Sumber L5-5' }
+  ]
 ];
 
 export default function CelenganGame() {
   const [levelIdx, setLevelIdx] = useState(0);
-  const [levelMeta, setLevelMeta] = useState<Array<{title: string; description: string; source: string}>>(() => {
+  const [levelMeta, setLevelMeta] = useState<Array<Array<{title: string; description: string; source: string}>>>(() => {
     try {
       const raw = localStorage.getItem('celengan_level_meta');
       if (raw) return JSON.parse(raw);
     } catch (e) {
       // ignore
     }
-    // fallback to in-code defaults
-    return DEFAULT_LEVEL_META.map(m => ({ ...m }));
+    // fallback to in-code defaults (deep copy)
+    return DEFAULT_LEVEL_META_PER_LEVEL.map(level => level.map(m => ({ ...m })));
   });
   // track which image index is showing for each level (0..4)
   const [imageIdxPerLevel, setImageIdxPerLevel] = useState<number[]>(() => LEVEL_IMAGES_PER_LEVEL.map(() => 0));
@@ -109,14 +138,16 @@ export default function CelenganGame() {
     }
   }, []);
 
-  // keep draft in sync when level changes
+  // keep draft in sync when level or selected photo changes
   useEffect(() => {
-    setEditDraft(levelMeta[levelIdx] || { title: '', description: '', source: '' });
-  }, [levelIdx, levelMeta]);
+    const imgIdx = imageIdxPerLevel[levelIdx] ?? 0;
+    setEditDraft(levelMeta[levelIdx]?.[imgIdx] || { title: '', description: '', source: '' });
+  }, [levelIdx, imageIdxPerLevel, levelMeta]);
 
   const saveLevelMeta = () => {
-    const updated = [...levelMeta];
-    updated[levelIdx] = { ...editDraft };
+    const updated = levelMeta.map(level => level.map(m => ({ ...m })));
+    const imgIdx = imageIdxPerLevel[levelIdx] ?? 0;
+    updated[levelIdx][imgIdx] = { ...editDraft };
     setLevelMeta(updated);
     try {
       localStorage.setItem('celengan_level_meta', JSON.stringify(updated));
@@ -127,7 +158,8 @@ export default function CelenganGame() {
   };
 
   const cancelEditMeta = () => {
-    setEditDraft(levelMeta[levelIdx] || { title: '', description: '', source: '' });
+    const imgIdx = imageIdxPerLevel[levelIdx] ?? 0;
+    setEditDraft(levelMeta[levelIdx]?.[imgIdx] || { title: '', description: '', source: '' });
     setIsEditingMeta(false);
   };
 
