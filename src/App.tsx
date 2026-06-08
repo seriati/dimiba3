@@ -246,18 +246,6 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-3xl border border-slate-100 shadow-xs text-center space-y-2">
-                <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-500 flex items-center justify-center mx-auto">
-                  <BookMarked className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-[10px] text-slate-400 font-extrabold uppercase leading-none">Kosakata Saku</p>
-                  <p className="text-xl font-baloo font-black text-slate-800 tracking-tight mt-1">
-                    8 Kartu Aktif
-                  </p>
-                </div>
-              </div>
-
             </div>
 
             {/* Pojok Etnobudaya & Filosofi DIMIBA */}
@@ -345,7 +333,7 @@ export default function App() {
 
             {/* Quick Menu Selection Directory Grid */}
             <div className="space-y-3">
-              <h4 className="font-baloo font-black text-slate-700 text-sm uppercase tracking-wider">Direktori Jelajah</h4>
+              <h4 className="font-baloo font-black text-slate-900 text-base md:text-lg tracking-wide">Ayo Pilih Kegiatan Seru</h4>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {NAV_ITEMS.filter(it => it.id !== 'home').map((item) => {
@@ -379,10 +367,10 @@ export default function App() {
 
             {/* Speaking character voice board widget */}
             <div className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm space-y-4">
-              <h4 className="font-baloo font-black text-slate-700 text-sm uppercase tracking-wide flex items-center gap-1.5">
+              <h4 className="font-baloo font-black text-slate-900 text-lg md:text-xl tracking-tight flex items-center gap-1.5">
                 📣 Sapa Sahabat Hutan Kelayau
               </h4>
-              <p className="text-xs text-slate-400">
+              <p className="text-sm text-slate-600">
                 Ketuk masing-masing hewan komutatif di bawah untuk mendengar suara dan tips praktis dasar dari mereka!
               </p>
 
@@ -973,7 +961,7 @@ export default function App() {
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
-                  className="mt-4 pt-4 border-t border-white/20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3"
+                  className="mt-4 pt-4 border-t border-white/20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3"
                 >
                   <div className="bg-white/95 p-3 rounded-2xl flex flex-col items-center text-center space-y-1 shadow-xs border border-orange-200">
                     <span className="text-2xl">🌱</span>
