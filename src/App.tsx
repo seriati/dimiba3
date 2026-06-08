@@ -248,86 +248,38 @@ export default function App() {
 
             </div>
 
-            {/* Pojok Etnobudaya & Filosofi DIMIBA */}
-            <div className="bg-gradient-to-br from-amber-50 via-amber-100/40 to-orange-50 rounded-[2.5rem] p-6 border-2 border-amber-200/60 shadow-xs space-y-5">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-2xl shadow-md border-b-4 border-amber-700/30">
-                    ⛰️
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-black uppercase tracking-widest text-amber-600 bg-amber-500/10 px-2 py-0.5 rounded-md">
-                      Tradisi & Kearifan Kalimantan
-                    </span>
-                    <h3 className="font-baloo font-black text-slate-800 text-lg leading-tight mt-0.5">
-                      Filosofi Tradisional &ldquo;DIMIBA&rdquo;
-                    </h3>
-                  </div>
+            {/* Pojok Kearifan Salam Dayak */}
+            <div className="bg-white rounded-[2.5rem] p-6 border border-amber-200 shadow-sm space-y-6">
+              <div className="space-y-3">
+                <div className="inline-flex items-center gap-3 rounded-full bg-amber-100 px-4 py-2 text-amber-900 font-black text-sm shadow-sm">
+                  <span>📜</span>
+                  <span>KEARIFAN LOKAL</span>
                 </div>
-                
-                {/* Cultural Dayak Tag */}
-                <div className="text-[10px] text-amber-800 bg-amber-200/50 px-3 py-1.5 rounded-full font-black flex items-center gap-1 border border-amber-300">
-                  <span>✨</span> Budaya Dayak Kalimantan
-                </div>
+                <h3 className="text-2xl md:text-3xl font-baloo font-black text-slate-900">
+                  Tahukah kamu?
+                </h3>
+                <p className="text-sm md:text-base text-slate-700 leading-relaxed font-semibold">
+                  "Adil Ka Talino, Bacuramin Ka Saruga, Basengat Ka Jubata" merupakan salam khas masyarakat Dayak. Salam ini biasanya diucapkan sebelum menyampaikan pidato atau sambutan. Maknanya mengajak kita untuk bersikap adil kepada teman, melakukan kebaikan, dan selalu bersyukur kepada Tuhan.
+                </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                
-                {/* 1. TEXTUAL CONTENT EXPLAINING DIMIBA ACRONYM (7 Cols) */}
-                <div className="md:col-span-7 space-y-3">
-                  <div className="bg-white/80 border border-amber-200/80 p-4 rounded-3xl space-y-2">
-                    <p className="text-sm font-baloo font-black text-amber-950 flex flex-wrap items-center gap-1">
-                      <span>📢</span> Akronim: <span className="bg-amber-500 text-white px-2 py-0.5 rounded-lg font-mono">Diri Mali Ia Bajual</span>
-                    </p>
-                    <p className="text-xs text-slate-600 font-bold leading-relaxed">
-                      Dalam rumpun bahasa Dayak, frasa <span className="text-amber-800 font-extrabold">&ldquo;Diri Mali Ia Bajual&rdquo;</span> bermakna harmonis dan asri, yaitu <strong className="text-slate-800 font-black">&ldquo;Kita Beli, Dia Jualan&rdquo;</strong>.
-                    </p>
-                  </div>
-
-                  <p className="text-xs text-slate-600 leading-relaxed font-semibold">
-                    Filosofi ini mengajarkan kesederhanaan, transparansi, dan rasa saling asih dalam kegiatan ekonomi komunal. Bukan sekadar mengejar keuntungan pribadi, melainkan kerukunan antar sesama makhluk hidup yang saling membutuhkan pertolongan di tengah keasrian alam Kalimantan.
+              <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-sm bg-slate-100">
+                <img
+                  src="/images/jokowi-salam-dayak.jpg"
+                  alt="Pak Jokowi mengucapkan salam Dayak saat pidato"
+                  className="w-full h-auto object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = '/images/kerajinanmanik.jpg';
+                  }}
+                />
+                <div className="bg-white px-4 py-3">
+                  <p className="text-sm font-bold text-slate-900">
+                    Pak Jokowi mengucapkan salam Dayak saat pidato.
                   </p>
-
-                  <div className="flex flex-wrap gap-2 text-[10px] font-bold">
-                    <span className="bg-orange-100 text-orange-800 px-2.5 py-1 rounded-lg">#Etnofinansial</span>
-                    <span className="bg-sky-100 text-sky-800 px-2.5 py-1 rounded-lg">#KurikulumMerdeka</span>
-                    <span className="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-lg">#KalimantanBarat</span>
-                  </div>
+                  <p className="text-xs text-slate-500 mt-1">
+                    Sumber: tempo.co
+                  </p>
                 </div>
-
-                {/* 2. IMAGE TEMPLATE WRAPPER CONTEXT (5 Cols) */}
-                <div className="md:col-span-5">
-                  <div className="relative rounded-3xl overflow-hidden border-2 border-amber-300/80 bg-white/50 p-2 shadow-xs group">
-                    <div className="relative rounded-2xl overflow-hidden bg-slate-100 aspect-video md:aspect-square flex items-center justify-center">
-                      
-                      {/* === TEMPLATE PLACEHOLDER GAMBAR CULTURAL === */}
-                      {/* Petunjuk Pengguna: Kamu tinggal meletakkan file gambar Anda di folder public/images/budaya-dayak.png */}
-                      <img 
-                        src="/images/budaya-dayak.png" 
-                        alt="Kearifan Budaya Dayak"
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        onError={(e) => {
-                          e.currentTarget.style.display = 'none';
-                        }}
-                        referrerPolicy="no-referrer"
-                      />
-
-                      {/* Tampilan Cadangan yang Indah & Estetik jika gambar belum dimasukkan */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 via-orange-400/10 to-amber-600/20 flex flex-col items-center justify-center p-3 text-center pointer-events-none">
-                        <span className="text-3xl filter drop-shadow">🏡</span>
-                        <p className="text-[10px] font-black text-amber-950 mt-1 leading-none">Gambar Kearifan Dayak</p>
-                        <p className="text-[8px] text-amber-800 leading-tight mt-1 font-semibold max-w-[140px]">
-                          Pasang gambar motif Dayak, Hutan Borneo, atau Pasar Tradisional Betang di sini.
-                        </p>
-                        <span className="text-[8px] bg-amber-500/85 text-white font-mono px-1 rounded-full font-bold mt-2">
-                          /images/budaya-dayak.png
-                        </span>
-                      </div>
-                      
-                    </div>
-                  </div>
-                </div>
-
               </div>
             </div>
 
