@@ -367,10 +367,10 @@ export default function App() {
 
             {/* Speaking character voice board widget */}
             <div className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm space-y-4">
-              <h4 className="font-baloo font-black text-slate-900 text-lg md:text-xl tracking-tight flex items-center gap-1.5">
+              <h4 className="font-baloo font-black text-slate-950 text-2xl md:text-3xl tracking-tight flex items-center gap-2">
                 📣 Sapa Sahabat Hutan Kelayau
               </h4>
-              <p className="text-sm text-slate-600">
+              <p className="text-base text-slate-700 font-bold">
                 Ketuk masing-masing hewan komutatif di bawah untuk mendengar suara dan tips praktis dasar dari mereka!
               </p>
 
@@ -395,11 +395,11 @@ export default function App() {
                       }}
                       className="bg-slate-50 hover:bg-sky-50 border hover:border-sky-200 transition-all p-4 rounded-2xl flex flex-col items-center justify-center text-center cursor-pointer group"
                     >
-                      <div className="w-14 h-14 rounded-full flex items-center justify-center text-3xl group-hover:scale-110 transition-transform bg-white border shadow-sm">
+                      <div className="w-14 h-14 rounded-full flex items-center justify-center text-4xl group-hover:scale-110 transition-transform bg-white border shadow-sm">
                         {actor.icon}
                       </div>
-                      <p className="text-xs font-black text-slate-800 mt-2">{actor.name}</p>
-                      <p className="text-[10px] text-slate-400 leading-tight italic mt-1 line-clamp-2">
+                      <p className="text-sm font-black text-slate-900 mt-2">{actor.name}</p>
+                      <p className="text-sm text-slate-700 leading-snug font-semibold mt-1 line-clamp-2">
                         {actor.phrase}
                       </p>
                     </button>
