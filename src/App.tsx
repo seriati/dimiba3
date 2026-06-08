@@ -1007,8 +1007,8 @@ export default function App() {
 
         {/* Footer info brand */}
         <footer className="text-center text-[10px] text-slate-400 pt-8 hidden sm:block">
-          <p className="font-extrabold tracking-widest uppercase">DIMIBA! — Media Pembelajaran Mandiri Kelas IV SD</p>
-          <p className="font-bold text-slate-300 mt-1">Dibuat khusus untuk pengenalan alat tukar Bertukar & Membayar sesuai kurikulum nasional.</p>
+          <p className="font-extrabold tracking-widest uppercase">DIMIBA! — Media Pembelajaran Interaktif "Diri Mali Ia Bajual" untuk Kelas IV SD</p>
+          <p className="font-bold text-slate-300 mt-1">Dibuat untuk mendukung pembelajaran interaktif tentang Bertukar dan Mebayar dengan pendekatan budaya setempat.</p>
         </footer>
 
       </main>

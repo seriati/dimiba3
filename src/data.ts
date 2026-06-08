@@ -109,12 +109,12 @@ export const QUIZ_DATA: QuizQuestion[] = [
     question: "Kelemahan terbesar sistem barter yang membuat manusia kesulitan berniaga adalah perlunya...",
     options: [
       "Izin tertulis dari kepala suku",
-      "Kecocokan keinginan timbal balik (Double Coincidence of Wants)",
+      "Kecocokan keinginan timbal balik",
       "Membawa timbangan batu yang berat",
       "Toko bertingkat yang megah"
     ],
     correctAnswer: 1,
-    explanation: "Untuk barter, kamu harus mencari orang yang mempunyai barang yang kamu inginkan DAN orang tersebut juga harus membutuhkan barang yang kamu tawarkan."
+    explanation: "Untuk barter, kamu harus mencari orang yang mempunyai barang yang kamu inginkan dan orang tersebut juga harus membutuhkan barang yang kamu tawarkan."
   },
   {
     id: 3,

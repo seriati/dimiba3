@@ -154,9 +154,9 @@ export default function QuizModule() {
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-3xl font-baloo font-black text-slate-800 leading-none">Siap Jadi Juara Rupiah? 🏆</h3>
+              <h3 className="text-3xl font-baloo font-black text-slate-800 leading-none">Ayo Uji Kemampuanmu!</h3>
               <p className="text-slate-500 text-sm max-w-sm mx-auto">
-                Tantang dirimu dengan {QUIZ_DATA.length} pertanyaan interaktif tentang barter dan fungsi uang rupiah. Raih skor 100% untuk kejutan indah!
+                Tantang dirimu dengan {QUIZ_DATA.length} pertanyaan interaktif tentang barter dan fungsi uang rupiah serta raih skor 100% untuk mendapatkan hasil tertinggi!
               </p>
             </div>
 
@@ -309,7 +309,7 @@ export default function QuizModule() {
                   {scorePercentage === 100 ? 'Sempurna! Nilai 100!' : scorePercentage >= 70 ? 'Hebat Sekali!' : 'Ayo Semangat Belajar!'}
                 </h3>
                 <p className="text-slate-500 text-sm max-w-sm mx-auto">
-                  Kamu berhasil menyelesaikan Uji Kemampuan Matematika Keuangan Kelayau!
+                  Kamu berhasil menyelesaikan Uji Kemampuan dengan Topik Alat Tukar!
                 </p>
               </div>
 
