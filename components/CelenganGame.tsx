@@ -23,100 +23,16 @@ const BILLS = [
   { value: 10000, label: 'Rp10.000', color: 'bg-purple-200 text-purple-800 font-extrabold border-purple-400 border-b-4', textCol: 'text-purple-800' }
 ];
 
-// Each level has 5 different images (placeholders).
-const LEVEL_IMAGES_PER_LEVEL = [
-  [
-    { src: '/images/celengan-l1-1.jpg', alt: 'Level 1 - Foto 1' },
-    { src: '/images/celengan-l1-2.jpg', alt: 'Level 1 - Foto 2' },
-    { src: '/images/celengan-l1-3.jpg', alt: 'Level 1 - Foto 3' },
-    { src: '/images/celengan-l1-4.jpg', alt: 'Level 1 - Foto 4' },
-    { src: '/images/celengan-l1-5.jpg', alt: 'Level 1 - Foto 5' }
-  ],
-  [
-    { src: '/images/celengan-l2-1.jpg', alt: 'Level 2 - Foto 1' },
-    { src: '/images/celengan-l2-2.jpg', alt: 'Level 2 - Foto 2' },
-    { src: '/images/celengan-l2-3.jpg', alt: 'Level 2 - Foto 3' },
-    { src: '/images/celengan-l2-4.jpg', alt: 'Level 2 - Foto 4' },
-    { src: '/images/celengan-l2-5.jpg', alt: 'Level 2 - Foto 5' }
-  ],
-  [
-    { src: '/images/celengan-l3-1.jpg', alt: 'Level 3 - Foto 1' },
-    { src: '/images/celengan-l3-2.jpg', alt: 'Level 3 - Foto 2' },
-    { src: '/images/celengan-l3-3.jpg', alt: 'Level 3 - Foto 3' },
-    { src: '/images/celengan-l3-4.jpg', alt: 'Level 3 - Foto 4' },
-    { src: '/images/celengan-l3-5.jpg', alt: 'Level 3 - Foto 5' }
-  ],
-  [
-    { src: '/images/celengan-l4-1.jpg', alt: 'Level 4 - Foto 1' },
-    { src: '/images/celengan-l4-2.jpg', alt: 'Level 4 - Foto 2' },
-    { src: '/images/celengan-l4-3.jpg', alt: 'Level 4 - Foto 3' },
-    { src: '/images/celengan-l4-4.jpg', alt: 'Level 4 - Foto 4' },
-    { src: '/images/celengan-l4-5.jpg', alt: 'Level 4 - Foto 5' }
-  ],
-  [
-    { src: '/images/celengan-l5-1.jpg', alt: 'Level 5 - Foto 1' },
-    { src: '/images/celengan-l5-2.jpg', alt: 'Level 5 - Foto 2' },
-    { src: '/images/celengan-l5-3.jpg', alt: 'Level 5 - Foto 3' },
-    { src: '/images/celengan-l5-4.jpg', alt: 'Level 5 - Foto 4' },
-    { src: '/images/celengan-l5-5.jpg', alt: 'Level 5 - Foto 5' }
-  ]
-];
-
-// Default metadata per level per photo (editable in-code). Each level contains 5 photo metadata objects.
-const DEFAULT_LEVEL_META_PER_LEVEL = [
-  [
-    { title: 'Judul L1 Foto1', description: 'Deskripsi L1 Foto1', source: 'Sumber L1-1' },
-    { title: 'Judul L1 Foto2', description: 'Deskripsi L1 Foto2', source: 'Sumber L1-2' },
-    { title: 'Judul L1 Foto3', description: 'Deskripsi L1 Foto3', source: 'Sumber L1-3' },
-    { title: 'Judul L1 Foto4', description: 'Deskripsi L1 Foto4', source: 'Sumber L1-4' },
-    { title: 'Judul L1 Foto5', description: 'Deskripsi L1 Foto5', source: 'Sumber L1-5' }
-  ],
-  [
-    { title: 'Judul L2 Foto1', description: 'Deskripsi L2 Foto1', source: 'Sumber L2-1' },
-    { title: 'Judul L2 Foto2', description: 'Deskripsi L2 Foto2', source: 'Sumber L2-2' },
-    { title: 'Judul L2 Foto3', description: 'Deskripsi L2 Foto3', source: 'Sumber L2-3' },
-    { title: 'Judul L2 Foto4', description: 'Deskripsi L2 Foto4', source: 'Sumber L2-4' },
-    { title: 'Judul L2 Foto5', description: 'Deskripsi L2 Foto5', source: 'Sumber L2-5' }
-  ],
-  [
-    { title: 'Judul L3 Foto1', description: 'Deskripsi L3 Foto1', source: 'Sumber L3-1' },
-    { title: 'Judul L3 Foto2', description: 'Deskripsi L3 Foto2', source: 'Sumber L3-2' },
-    { title: 'Judul L3 Foto3', description: 'Deskripsi L3 Foto3', source: 'Sumber L3-3' },
-    { title: 'Judul L3 Foto4', description: 'Deskripsi L3 Foto4', source: 'Sumber L3-4' },
-    { title: 'Judul L3 Foto5', description: 'Deskripsi L3 Foto5', source: 'Sumber L3-5' }
-  ],
-  [
-    { title: 'Judul L4 Foto1', description: 'Deskripsi L4 Foto1', source: 'Sumber L4-1' },
-    { title: 'Judul L4 Foto2', description: 'Deskripsi L4 Foto2', source: 'Sumber L4-2' },
-    { title: 'Judul L4 Foto3', description: 'Deskripsi L4 Foto3', source: 'Sumber L4-3' },
-    { title: 'Judul L4 Foto4', description: 'Deskripsi L4 Foto4', source: 'Sumber L4-4' },
-    { title: 'Judul L4 Foto5', description: 'Deskripsi L4 Foto5', source: 'Sumber L4-5' }
-  ],
-  [
-    { title: 'Judul L5 Foto1', description: 'Deskripsi L5 Foto1', source: 'Sumber L5-1' },
-    { title: 'Judul L5 Foto2', description: 'Deskripsi L5 Foto2', source: 'Sumber L5-2' },
-    { title: 'Judul L5 Foto3', description: 'Deskripsi L5 Foto3', source: 'Sumber L5-3' },
-    { title: 'Judul L5 Foto4', description: 'Deskripsi L5 Foto4', source: 'Sumber L5-4' },
-    { title: 'Judul L5 Foto5', description: 'Deskripsi L5 Foto5', source: 'Sumber L5-5' }
-  ]
+const LEVEL_IMAGES = [
+  { src: '/images/celengan-dayak-1.jpg', alt: 'Gambar tradisional Dayak untuk level 1' },
+  { src: '/images/celengan-dayak-2.jpg', alt: 'Gambar tradisional Dayak untuk level 2' },
+  { src: '/images/celengan-dayak-3.jpg', alt: 'Gambar tradisional Dayak untuk level 3' },
+  { src: '/images/celengan-dayak-4.jpg', alt: 'Gambar tradisional Dayak untuk level 4' },
+  { src: '/images/celengan-dayak-5.jpg', alt: 'Gambar tradisional Dayak untuk level 5' }
 ];
 
 export default function CelenganGame() {
   const [levelIdx, setLevelIdx] = useState(0);
-  const [levelMeta, setLevelMeta] = useState<Array<Array<{title: string; description: string; source: string}>>>(() => {
-    try {
-      const raw = localStorage.getItem('celengan_level_meta');
-      if (raw) return JSON.parse(raw);
-    } catch (e) {
-      // ignore
-    }
-    // fallback to in-code defaults (deep copy)
-    return DEFAULT_LEVEL_META_PER_LEVEL.map(level => level.map(m => ({ ...m })));
-  });
-  // track which image index is showing for each level (0..4)
-  const [imageIdxPerLevel, setImageIdxPerLevel] = useState<number[]>(() => LEVEL_IMAGES_PER_LEVEL.map(() => 0));
-  const [isEditingMeta, setIsEditingMeta] = useState(false);
-  const [editDraft, setEditDraft] = useState<{title: string; description: string; source: string}>({ title: '', description: '', source: '' });
   const [selectedChange, setSelectedChange] = useState<{ value: number; key: number }[]>([]);
   const [feedback, setFeedback] = useState<'none' | 'success' | 'fail' | 'empty'>('none');
   const [digitalSavings, setDigitalSavings] = useState(0);
@@ -137,31 +53,6 @@ export default function CelenganGame() {
       setDigitalSavings(parseInt(saved, 10));
     }
   }, []);
-
-  // keep draft in sync when level or selected photo changes
-  useEffect(() => {
-    const imgIdx = imageIdxPerLevel[levelIdx] ?? 0;
-    setEditDraft(levelMeta[levelIdx]?.[imgIdx] || { title: '', description: '', source: '' });
-  }, [levelIdx, imageIdxPerLevel, levelMeta]);
-
-  const saveLevelMeta = () => {
-    const updated = levelMeta.map(level => level.map(m => ({ ...m })));
-    const imgIdx = imageIdxPerLevel[levelIdx] ?? 0;
-    updated[levelIdx][imgIdx] = { ...editDraft };
-    setLevelMeta(updated);
-    try {
-      localStorage.setItem('celengan_level_meta', JSON.stringify(updated));
-    } catch (e) {
-      // ignore
-    }
-    setIsEditingMeta(false);
-  };
-
-  const cancelEditMeta = () => {
-    const imgIdx = imageIdxPerLevel[levelIdx] ?? 0;
-    setEditDraft(levelMeta[levelIdx]?.[imgIdx] || { title: '', description: '', source: '' });
-    setIsEditingMeta(false);
-  };
 
   const selectCurrency = (val: number) => {
     playClickSound();
@@ -534,9 +425,9 @@ export default function CelenganGame() {
 
                     <div className="relative rounded-[2rem] overflow-hidden bg-slate-100 border border-orange-200 shadow-sm">
                       <img
-                        src={LEVEL_IMAGES_PER_LEVEL[levelIdx]?.[imageIdxPerLevel[levelIdx]]?.src || '/images/celengan-dayak.png'}
-                        alt={LEVEL_IMAGES_PER_LEVEL[levelIdx]?.[imageIdxPerLevel[levelIdx]]?.alt || `Level ${levelIdx + 1}`}
-                        className="w-full h-56 md:h-80 lg:h-96 object-cover"
+                        src={LEVEL_IMAGES[levelIdx]?.src}
+                        alt={LEVEL_IMAGES[levelIdx]?.alt}
+                        className="w-full h-72 md:h-80 object-cover"
                         onError={(e) => {
                           e.currentTarget.src = '/images/celengan-dayak.png';
                         }}
@@ -546,77 +437,6 @@ export default function CelenganGame() {
                       <div className="absolute left-4 bottom-4 text-white font-black text-sm md:text-base drop-shadow-lg">
                         Level {levelIdx + 1} / 5
                       </div>
-                    </div>
-
-                    {/* Thumbnails for the current level (5 photos) */}
-                    <div className="flex gap-2 mt-3 overflow-x-auto">
-                      {LEVEL_IMAGES_PER_LEVEL[levelIdx]?.map((imgObj, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => setImageIdxPerLevel(prev => {
-                            const copy = [...prev];
-                            copy[levelIdx] = idx;
-                            return copy;
-                          })}
-                          className={`rounded-md overflow-hidden border ${imageIdxPerLevel[levelIdx] === idx ? 'ring-2 ring-amber-400' : 'border-slate-200'} h-16 w-20 flex-shrink-0`}
-                          title={`Foto ${idx + 1}`}
-                        >
-                          <img
-                            src={imgObj.src}
-                            alt={imgObj.alt}
-                            className="w-full h-full object-cover"
-                            onError={(e) => { e.currentTarget.src = '/images/celengan-dayak.png'; }}
-                            referrerPolicy="no-referrer"
-                          />
-                        </button>
-                      ))}
-                    </div>
-                    
-                    {/* Level metadata: title, description, source & edit controls */}
-                    <div className="px-3 py-3 bg-white border-t border-orange-100">
-                      {!isEditingMeta ? (
-                        <div className="space-y-2">
-                          <div className="flex items-start justify-between">
-                            <div>
-                              <h4 className="text-lg font-bold text-slate-900">
-                                {levelMeta[levelIdx]?.title || 'Tambahkan judul untuk level ini'}
-                              </h4>
-                              <p className="text-sm text-slate-700 mt-1">
-                                {levelMeta[levelIdx]?.description || 'Tambahkan deskripsi singkat untuk gambar ini.'}
-                              </p>
-                              <p className="text-xs text-slate-500 mt-1">Sumber: {levelMeta[levelIdx]?.source || '-'}</p>
-                            </div>
-                            <div className="ml-4">
-                              <button onClick={() => setIsEditingMeta(true)} className="text-xs bg-amber-100 px-3 py-1 rounded-md font-bold">Edit</button>
-                            </div>
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="space-y-2">
-                          <input
-                            value={editDraft.title}
-                            onChange={(e) => setEditDraft(prev => ({ ...prev, title: e.target.value }))}
-                            placeholder="Judul (mis. Pakis)"
-                            className="w-full border px-3 py-2 rounded-md text-sm"
-                          />
-                          <textarea
-                            value={editDraft.description}
-                            onChange={(e) => setEditDraft(prev => ({ ...prev, description: e.target.value }))}
-                            placeholder="Deskripsi singkat gambar"
-                            className="w-full border px-3 py-2 rounded-md text-sm h-20"
-                          />
-                          <input
-                            value={editDraft.source}
-                            onChange={(e) => setEditDraft(prev => ({ ...prev, source: e.target.value }))}
-                            placeholder="Sumber (mis. tempo.co)"
-                            className="w-full border px-3 py-2 rounded-md text-sm"
-                          />
-                          <div className="flex gap-2 mt-2">
-                            <button onClick={saveLevelMeta} className="bg-emerald-600 text-white px-4 py-2 rounded-md font-bold">Simpan</button>
-                            <button onClick={cancelEditMeta} className="bg-white border px-4 py-2 rounded-md">Batal</button>
-                          </div>
-                        </div>
-                      )}
                     </div>
                   </div>
                 </div>
