@@ -471,6 +471,53 @@ export default function CelenganGame() {
                         Level {levelIdx + 1} / 5
                       </div>
                     </div>
+                    
+                    {/* Level metadata: title, description, source & edit controls */}
+                    <div className="px-3 py-3 bg-white border-t border-orange-100">
+                      {!isEditingMeta ? (
+                        <div className="space-y-2">
+                          <div className="flex items-start justify-between">
+                            <div>
+                              <h4 className="text-lg font-bold text-slate-900">
+                                {levelMeta[levelIdx]?.title || 'Tambahkan judul untuk level ini'}
+                              </h4>
+                              <p className="text-sm text-slate-700 mt-1">
+                                {levelMeta[levelIdx]?.description || 'Tambahkan deskripsi singkat untuk gambar ini.'}
+                              </p>
+                              <p className="text-xs text-slate-500 mt-1">Sumber: {levelMeta[levelIdx]?.source || '-'}</p>
+                            </div>
+                            <div className="ml-4">
+                              <button onClick={() => setIsEditingMeta(true)} className="text-xs bg-amber-100 px-3 py-1 rounded-md font-bold">Edit</button>
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="space-y-2">
+                          <input
+                            value={editDraft.title}
+                            onChange={(e) => setEditDraft(prev => ({ ...prev, title: e.target.value }))}
+                            placeholder="Judul (mis. Pakis)"
+                            className="w-full border px-3 py-2 rounded-md text-sm"
+                          />
+                          <textarea
+                            value={editDraft.description}
+                            onChange={(e) => setEditDraft(prev => ({ ...prev, description: e.target.value }))}
+                            placeholder="Deskripsi singkat gambar"
+                            className="w-full border px-3 py-2 rounded-md text-sm h-20"
+                          />
+                          <input
+                            value={editDraft.source}
+                            onChange={(e) => setEditDraft(prev => ({ ...prev, source: e.target.value }))}
+                            placeholder="Sumber (mis. tempo.co)"
+                            className="w-full border px-3 py-2 rounded-md text-sm"
+                          />
+                          <div className="flex gap-2 mt-2">
+                            <button onClick={saveLevelMeta} className="bg-emerald-600 text-white px-4 py-2 rounded-md font-bold">Simpan</button>
+                            <button onClick={cancelEditMeta} className="bg-white border px-4 py-2 rounded-md">Batal</button>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
 
