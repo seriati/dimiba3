@@ -729,13 +729,13 @@ export default function App() {
 
                 <div className="space-y-1">
                   <h3 className="text-xl font-baloo font-black text-slate-800">
-                    [NAMA PENGEMBANG / DEVELOPER NAME]
+                    PENGEMBANGAN MEDIA PEMBELAJARAN INTERAKTIF
                   </h3>
                   <p className="text-xs bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full font-black inline-block uppercase tracking-wider">
-                    Pengembang Media Pendidikan
+                    Oleh: Seriati, S.Pd. (Guru SD)
                   </p>
                   <p className="text-slate-400 text-xs font-semibold mt-1">
-                    [Instansi/Sekolah Anda, misal: Universitas Pendidikan Indonesia / SDN Kalimantan]
+                    [Guru di SDN 05 Sibawek, Mahasiswa S2 PGSD di Universitas Tanjungpura]
                   </p>
                 </div>
               </div>
@@ -746,16 +746,20 @@ export default function App() {
                   <span>💡</span> Tentang Pengembang
                 </h4>
                 <p className="text-xs text-slate-600 leading-relaxed font-semibold">
-                  Media ini dirancang dan dikembangkan dengan penuh perhatian untuk meningkatkan literasi keuangan usia dini di jenjang Sekolah Dasar. Melalui materi cerita fabel interaktif (DIMIBA), celengan kasir digital, serta modul kuis asyik, siswa dapat mengeksplorasi ilmu ekonomi yang bermutu tinggi dan inklusif.
+                  Media ini saya kembangkan untuk membantu peserta didik memahami materi bertukar dan membayar melalui situasi yang dekat dengan kehidupan sehari-hari serta budaya setempat.
+
+Dalam proses pembuatannya, saya memanfaatkan bantuan teknologi AI, seperti Google AI Studio dan Antigravity, untuk mendukung pengembangan beberapa bagian media. Namun, seluruh isi, fitur, ilustrasi, dan materi yang ditampilkan telah saya telaah, evaluasi, dan sesuaikan kembali agar akurat, relevan, serta sesuai dengan tujuan pembelajaran yang ingin dicapai.
+
+Terima kasih telah menggunakan media pembelajaran ini. Semoga dapat memberikan pengalaman belajar yang menyenangkan dan bermakna.
                 </p>
                 <div className="grid grid-cols-2 gap-4 text-xs pt-3 border-t border-indigo-100/30 font-bold">
                   <div>
                     <span className="text-slate-400 text-[10px] block font-extrabold uppercase">Email Kontak</span>
-                    <span className="text-indigo-800 text-xs font-bold font-mono">[email.anda@gmail.com]</span>
+                    <span className="text-indigo-800 text-xs font-bold font-mono">f2211251024@student.untan.ac.id</span>
                   </div>
                   <div>
-                    <span className="text-slate-400 text-[10px] block font-extrabold uppercase">Kontribusi</span>
-                    <span className="text-indigo-800 text-xs font-bold">[UI/UX Design & Kurikulum]</span>
+                    <span className="text-slate-400 text-[10px] block font-extrabold uppercase">Bidang Kontribusi</span>
+                    <span className="text-indigo-800 text-xs font-bold">Pengembangan Media Pembelajaran, Matematika GASING, Pendidikan Anak SD</span>
                   </div>
                 </div>
               </div>
@@ -779,34 +783,28 @@ export default function App() {
                 <div className="text-3xl filter drop-shadow">🌟</div>
                 <div>
                   <h4 className="font-baloo font-black text-rose-900 text-lg leading-tight">Penghargaan & Inspirasi Cerita</h4>
-                  <p className="text-[10px] text-rose-500 font-black uppercase tracking-wider mt-0.5">TERIMA KASIH KEPADA KREATOR</p>
+                  <p className="text-[10px] text-rose-500 font-black uppercase tracking-wider mt-0.5">Ucapan terima kasih</p>
                 </div>
               </div>
 
               <div className="space-y-3.5 text-xs leading-relaxed font-semibold text-rose-950">
                 <p className="text-justify font-bold text-slate-700">
-                  Apresiasi yang tulus dan penghargaan setinggi-tingginya kami haturkan kepada:
+                  Puji syukur kepada Tuhan Yang Maha Esa atas terselesaikannya media pembelajaran ini. Dalam proses pengembangannya, banyak pihak yang telah memberikan inspirasi, dukungan, masukan, serta bantuan yang sangat berarti. Oleh karena itu, penulis menyampaikan penghargaan dan ucapan terima kasih yang sebesar-besarnya kepada:
                 </p>
                 
-                {/* Story creator credit box */}
-                <div className="bg-white border border-rose-200/60 p-4 rounded-2xl shadow-xs space-y-2">
-                  <div className="flex items-center gap-1.5 font-extrabold text-rose-900 text-sm">
-                    <span>✍️</span> <span>[NAMA PEMBUAT CERITA / CO-AUTHOR DI SINI]</span>
-                  </div>
-                  <p className="text-[11px] text-slate-500 font-medium leading-relaxed italic">
-                    &ldquo;Pencipta petualangan dongeng hewan di Hutan Kelayau yang menginspirasi media interaktif DIMIBA ini. Imajinasi ceritanya membantu anak-anak usia Sekolah Dasar di Nusantara memahami betapa pentingnya konsep nilai uang, alat tukar, dan budi pekerti jujur saat jualan jajanan.&rdquo;
-                  </p>
-                </div>
+              
 
                 <p className="text-justify text-slate-600 font-medium pt-1">
-                  Terima kasih atas karya tulisan maupun gagasan cerita anak yang menakjubkan ini. Dengan media digital interaktif bertajuk *Kependidikan DIMIBA* ini, kami berharap pesan mulia dan jenaka dari para sahabat satwa di hutan kita dapat tersebar semakin luas dan mendidik generasi masa depan Indonesia!
+                  1. Tim penyusun buku Bahasa Indonesia: Lihat Sekitar SD Kelas IV, yaitu Eva Y. Nukman dan Cicilia Erni Setyowati, yang diterbitkan oleh Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi Republik Indonesia pada tahun 2021. Cerita Dongeng Hutan Kelayau dalam media ini diadaptasi dan dikembangkan dengan mengacu pada sumber tersebut sebagai inspirasi utama.
+                  2. Dosen pembimbing dan dosen penguji, yang telah memberikan arahan, kritik, saran, serta masukan yang konstruktif sehingga media ini dapat dikembangkan dengan lebih baik.
+                  3. Seluruh pihak yang telah membantu proses pengembangan media, baik melalui dukungan material maupun nonmaterial, yang tidak dapat disebutkan satu per satu.
                 </p>
               </div>
 
               {/* Traditional border illustration container */}
               <div className="p-3 bg-white border border-dashed border-rose-300 rounded-xl flex items-center justify-center gap-2">
                 <span className="text-base">🤝</span>
-                <span className="text-[10px] font-black tracking-wide text-rose-900 uppercase">Inspired By Creative Local Writer</span>
+                <span className="text-[10px] font-black tracking-wide text-rose-900 uppercase">TERIMA KASIH</span>
               </div>
             </div>
           </motion.div>
