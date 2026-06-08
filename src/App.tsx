@@ -14,6 +14,7 @@ import { STORY_CHUNKS } from './data';
 import { playClickSound, playSuccessSound, playErrorSound, playFanfareSound } from './utils/audio.ts';
 
 import StoryIllustrations from '../components/StoryIllustrations.tsx';
+import CelenganGame from '../components/CelenganGame.tsx';
 import QuizModule from '../components/QuizModule.tsx';
 
 export default function App() {
@@ -159,6 +160,7 @@ export default function App() {
     { id: 'home', label: 'Beranda', icon: Home, color: 'text-sky-500 bg-sky-50 border-sky-100 hover:bg-sky-100/35' },
     { id: 'tujuan', label: 'Tujuan Belajar', icon: Target, color: 'text-teal-500 bg-teal-50 border-teal-100 hover:bg-teal-100/35' },
     { id: 'materi', label: 'Materi Cerita', icon: BookOpen, color: 'text-rose-500 bg-rose-50 border-rose-100 hover:bg-rose-100/35' },
+    { id: 'game', label: 'Celengan Digital', icon: Coins, color: 'text-amber-500 bg-amber-50 border-amber-100 hover:bg-amber-100/35' },
     { id: 'kuis', label: 'Uji Kemampuan', icon: BrainCircuit, color: 'text-emerald-500 bg-emerald-50 border-emerald-100 hover:bg-emerald-100/35' },
     { id: 'profil', label: 'Profil Pengembang', icon: User, color: 'text-indigo-500 bg-indigo-50 border-indigo-100 hover:bg-indigo-100/35' }
   ] as const;
@@ -194,6 +196,12 @@ export default function App() {
                     className="bg-yellow-400 hover:bg-yellow-500 text-slate-950 font-black px-6 py-3.5 rounded-2xl shadow-md cursor-pointer text-xs uppercase tracking-wide transform active:scale-95 transition-transform"
                   >
                     Mulai Belajar Cerita 📖
+                  </button>
+                  <button
+                    onClick={() => { playClickSound(); setActiveTab('game'); }}
+                    className="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-black px-6 py-3.5 rounded-2xl text-xs uppercase tracking-wide cursor-pointer transition-colors"
+                  >
+                    Masuk Celengan Game 🎮
                   </button>
                 </div>
               </div>
@@ -345,6 +353,7 @@ export default function App() {
                         </h4>
                         <p className="text-[11px] text-slate-500 mt-1 font-semibold leading-tight">
                           {item.id === 'materi' && 'Nikmati cerpen komik interaktif.'}
+                          {item.id === 'game' && 'Simulasi kembalian Toko Kelayau.'}
                           {item.id === 'kuis' && 'Uji nilai dan pembahasan soal.'}
                           {item.id === 'tujuan' && 'Tengok hasil belajar ideal.'}
                           {item.id === 'profil' && 'Profil pengembang & ucapan terima kasih.'}
@@ -620,6 +629,9 @@ export default function App() {
 
           </motion.div>
         );
+
+      case 'game':
+        return <CelenganGame />;
 
       case 'kuis':
         return <QuizModule />;

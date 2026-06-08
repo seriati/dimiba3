@@ -23,34 +23,98 @@ const BILLS = [
   { value: 10000, label: 'Rp10.000', color: 'bg-purple-200 text-purple-800 font-extrabold border-purple-400 border-b-4', textCol: 'text-purple-800' }
 ];
 
-const LEVEL_IMAGES = [
-  { src: '/images/celengan-level-1.jpg', alt: 'Visual tradisional Dayak untuk level 1' },
-  { src: '/images/celengan-level-2.jpg', alt: 'Visual tradisional Dayak untuk level 2' },
-  { src: '/images/celengan-level-3.jpg', alt: 'Visual tradisional Dayak untuk level 3' },
-  { src: '/images/celengan-level-4.jpg', alt: 'Visual tradisional Dayak untuk level 4' },
-  { src: '/images/celengan-level-5.jpg', alt: 'Visual tradisional Dayak untuk level 5' }
+// Each level has 5 different images (placeholders).
+const LEVEL_IMAGES_PER_LEVEL = [
+  [
+    { src: '/images/celengan-l1-1.jpg', alt: 'Level 1 - Foto 1' },
+    { src: '/images/celengan-l1-2.jpg', alt: 'Level 1 - Foto 2' },
+    { src: '/images/celengan-l1-3.jpg', alt: 'Level 1 - Foto 3' },
+    { src: '/images/celengan-l1-4.jpg', alt: 'Level 1 - Foto 4' },
+    { src: '/images/celengan-l1-5.jpg', alt: 'Level 1 - Foto 5' }
+  ],
+  [
+    { src: '/images/celengan-l2-1.jpg', alt: 'Level 2 - Foto 1' },
+    { src: '/images/celengan-l2-2.jpg', alt: 'Level 2 - Foto 2' },
+    { src: '/images/celengan-l2-3.jpg', alt: 'Level 2 - Foto 3' },
+    { src: '/images/celengan-l2-4.jpg', alt: 'Level 2 - Foto 4' },
+    { src: '/images/celengan-l2-5.jpg', alt: 'Level 2 - Foto 5' }
+  ],
+  [
+    { src: '/images/celengan-l3-1.jpg', alt: 'Level 3 - Foto 1' },
+    { src: '/images/celengan-l3-2.jpg', alt: 'Level 3 - Foto 2' },
+    { src: '/images/celengan-l3-3.jpg', alt: 'Level 3 - Foto 3' },
+    { src: '/images/celengan-l3-4.jpg', alt: 'Level 3 - Foto 4' },
+    { src: '/images/celengan-l3-5.jpg', alt: 'Level 3 - Foto 5' }
+  ],
+  [
+    { src: '/images/celengan-l4-1.jpg', alt: 'Level 4 - Foto 1' },
+    { src: '/images/celengan-l4-2.jpg', alt: 'Level 4 - Foto 2' },
+    { src: '/images/celengan-l4-3.jpg', alt: 'Level 4 - Foto 3' },
+    { src: '/images/celengan-l4-4.jpg', alt: 'Level 4 - Foto 4' },
+    { src: '/images/celengan-l4-5.jpg', alt: 'Level 4 - Foto 5' }
+  ],
+  [
+    { src: '/images/celengan-l5-1.jpg', alt: 'Level 5 - Foto 1' },
+    { src: '/images/celengan-l5-2.jpg', alt: 'Level 5 - Foto 2' },
+    { src: '/images/celengan-l5-3.jpg', alt: 'Level 5 - Foto 3' },
+    { src: '/images/celengan-l5-4.jpg', alt: 'Level 5 - Foto 4' },
+    { src: '/images/celengan-l5-5.jpg', alt: 'Level 5 - Foto 5' }
+  ]
 ];
 
-// Default metadata per level (editable in-code). Each level stores one title, description, and source.
-const DEFAULT_LEVEL_META = [
-  { title: 'Judul Level 1', description: 'Deskripsi untuk level 1.', source: 'Sumber level 1' },
-  { title: 'Judul Level 2', description: 'Deskripsi untuk level 2.', source: 'Sumber level 2' },
-  { title: 'Judul Level 3', description: 'Deskripsi untuk level 3.', source: 'Sumber level 3' },
-  { title: 'Judul Level 4', description: 'Deskripsi untuk level 4.', source: 'Sumber level 4' },
-  { title: 'Judul Level 5', description: 'Deskripsi untuk level 5.', source: 'Sumber level 5' }
+// Default metadata per level per photo (editable in-code). Each level contains 5 photo metadata objects.
+const DEFAULT_LEVEL_META_PER_LEVEL = [
+  [
+    { title: 'Judul L1 Foto1', description: 'Deskripsi L1 Foto1', source: 'Sumber L1-1' },
+    { title: 'Judul L1 Foto2', description: 'Deskripsi L1 Foto2', source: 'Sumber L1-2' },
+    { title: 'Judul L1 Foto3', description: 'Deskripsi L1 Foto3', source: 'Sumber L1-3' },
+    { title: 'Judul L1 Foto4', description: 'Deskripsi L1 Foto4', source: 'Sumber L1-4' },
+    { title: 'Judul L1 Foto5', description: 'Deskripsi L1 Foto5', source: 'Sumber L1-5' }
+  ],
+  [
+    { title: 'Judul L2 Foto1', description: 'Deskripsi L2 Foto1', source: 'Sumber L2-1' },
+    { title: 'Judul L2 Foto2', description: 'Deskripsi L2 Foto2', source: 'Sumber L2-2' },
+    { title: 'Judul L2 Foto3', description: 'Deskripsi L2 Foto3', source: 'Sumber L2-3' },
+    { title: 'Judul L2 Foto4', description: 'Deskripsi L2 Foto4', source: 'Sumber L2-4' },
+    { title: 'Judul L2 Foto5', description: 'Deskripsi L2 Foto5', source: 'Sumber L2-5' }
+  ],
+  [
+    { title: 'Judul L3 Foto1', description: 'Deskripsi L3 Foto1', source: 'Sumber L3-1' },
+    { title: 'Judul L3 Foto2', description: 'Deskripsi L3 Foto2', source: 'Sumber L3-2' },
+    { title: 'Judul L3 Foto3', description: 'Deskripsi L3 Foto3', source: 'Sumber L3-3' },
+    { title: 'Judul L3 Foto4', description: 'Deskripsi L3 Foto4', source: 'Sumber L3-4' },
+    { title: 'Judul L3 Foto5', description: 'Deskripsi L3 Foto5', source: 'Sumber L3-5' }
+  ],
+  [
+    { title: 'Judul L4 Foto1', description: 'Deskripsi L4 Foto1', source: 'Sumber L4-1' },
+    { title: 'Judul L4 Foto2', description: 'Deskripsi L4 Foto2', source: 'Sumber L4-2' },
+    { title: 'Judul L4 Foto3', description: 'Deskripsi L4 Foto3', source: 'Sumber L4-3' },
+    { title: 'Judul L4 Foto4', description: 'Deskripsi L4 Foto4', source: 'Sumber L4-4' },
+    { title: 'Judul L4 Foto5', description: 'Deskripsi L4 Foto5', source: 'Sumber L4-5' }
+  ],
+  [
+    { title: 'Judul L5 Foto1', description: 'Deskripsi L5 Foto1', source: 'Sumber L5-1' },
+    { title: 'Judul L5 Foto2', description: 'Deskripsi L5 Foto2', source: 'Sumber L5-2' },
+    { title: 'Judul L5 Foto3', description: 'Deskripsi L5 Foto3', source: 'Sumber L5-3' },
+    { title: 'Judul L5 Foto4', description: 'Deskripsi L5 Foto4', source: 'Sumber L5-4' },
+    { title: 'Judul L5 Foto5', description: 'Deskripsi L5 Foto5', source: 'Sumber L5-5' }
+  ]
 ];
 
 export default function CelenganGame() {
   const [levelIdx, setLevelIdx] = useState(0);
-  const [levelMeta, setLevelMeta] = useState<Array<{title: string; description: string; source: string}>>(() => {
+  const [levelMeta, setLevelMeta] = useState<Array<Array<{title: string; description: string; source: string}>>>(() => {
     try {
       const raw = localStorage.getItem('celengan_level_meta');
       if (raw) return JSON.parse(raw);
     } catch (e) {
       // ignore
     }
-    return DEFAULT_LEVEL_META.map(m => ({ ...m }));
+    // fallback to in-code defaults (deep copy)
+    return DEFAULT_LEVEL_META_PER_LEVEL.map(level => level.map(m => ({ ...m })));
   });
+  // track which image index is showing for each level (0..4)
+  const [imageIdxPerLevel, setImageIdxPerLevel] = useState<number[]>(() => LEVEL_IMAGES_PER_LEVEL.map(() => 0));
   const [isEditingMeta, setIsEditingMeta] = useState(false);
   const [editDraft, setEditDraft] = useState<{title: string; description: string; source: string}>({ title: '', description: '', source: '' });
   const [selectedChange, setSelectedChange] = useState<{ value: number; key: number }[]>([]);
@@ -74,14 +138,16 @@ export default function CelenganGame() {
     }
   }, []);
 
-  // keep draft in sync when level changes
+  // keep draft in sync when level or selected photo changes
   useEffect(() => {
-    setEditDraft(levelMeta[levelIdx] || { title: '', description: '', source: '' });
-  }, [levelIdx, levelMeta]);
+    const imgIdx = imageIdxPerLevel[levelIdx] ?? 0;
+    setEditDraft(levelMeta[levelIdx]?.[imgIdx] || { title: '', description: '', source: '' });
+  }, [levelIdx, imageIdxPerLevel, levelMeta]);
 
   const saveLevelMeta = () => {
-    const updated = [...levelMeta];
-    updated[levelIdx] = { ...editDraft };
+    const updated = levelMeta.map(level => level.map(m => ({ ...m })));
+    const imgIdx = imageIdxPerLevel[levelIdx] ?? 0;
+    updated[levelIdx][imgIdx] = { ...editDraft };
     setLevelMeta(updated);
     try {
       localStorage.setItem('celengan_level_meta', JSON.stringify(updated));
@@ -92,7 +158,8 @@ export default function CelenganGame() {
   };
 
   const cancelEditMeta = () => {
-    setEditDraft(levelMeta[levelIdx] || { title: '', description: '', source: '' });
+    const imgIdx = imageIdxPerLevel[levelIdx] ?? 0;
+    setEditDraft(levelMeta[levelIdx]?.[imgIdx] || { title: '', description: '', source: '' });
     setIsEditingMeta(false);
   };
 
@@ -467,8 +534,8 @@ export default function CelenganGame() {
 
                     <div className="relative rounded-[2rem] overflow-hidden bg-slate-100 border border-orange-200 shadow-sm">
                       <img
-                        src={LEVEL_IMAGES[levelIdx]?.src || '/images/celengan-dayak.png'}
-                        alt={LEVEL_IMAGES[levelIdx]?.alt || `Level ${levelIdx + 1}`}
+                        src={LEVEL_IMAGES_PER_LEVEL[levelIdx]?.[imageIdxPerLevel[levelIdx]]?.src || '/images/celengan-dayak.png'}
+                        alt={LEVEL_IMAGES_PER_LEVEL[levelIdx]?.[imageIdxPerLevel[levelIdx]]?.alt || `Level ${levelIdx + 1}`}
                         className="w-full h-56 md:h-80 lg:h-96 object-cover"
                         onError={(e) => {
                           e.currentTarget.src = '/images/celengan-dayak.png';
@@ -479,6 +546,30 @@ export default function CelenganGame() {
                       <div className="absolute left-4 bottom-4 text-white font-black text-sm md:text-base drop-shadow-lg">
                         Level {levelIdx + 1} / 5
                       </div>
+                    </div>
+
+                    {/* Thumbnails for the current level (5 photos) */}
+                    <div className="flex gap-2 mt-3 overflow-x-auto">
+                      {LEVEL_IMAGES_PER_LEVEL[levelIdx]?.map((imgObj, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setImageIdxPerLevel(prev => {
+                            const copy = [...prev];
+                            copy[levelIdx] = idx;
+                            return copy;
+                          })}
+                          className={`rounded-md overflow-hidden border ${imageIdxPerLevel[levelIdx] === idx ? 'ring-2 ring-amber-400' : 'border-slate-200'} h-16 w-20 flex-shrink-0`}
+                          title={`Foto ${idx + 1}`}
+                        >
+                          <img
+                            src={imgObj.src}
+                            alt={imgObj.alt}
+                            className="w-full h-full object-cover"
+                            onError={(e) => { e.currentTarget.src = '/images/celengan-dayak.png'; }}
+                            referrerPolicy="no-referrer"
+                          />
+                        </button>
+                      ))}
                     </div>
                     
                     {/* Level metadata: title, description, source & edit controls */}
