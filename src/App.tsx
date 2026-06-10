@@ -710,7 +710,7 @@ export default function App() {
                 {/* PHOTO PLACEHOLDER FOR DEVELOPER */}
                 <div className="relative w-28 h-28 mx-auto rounded-full overflow-hidden border-4 border-indigo-100 bg-slate-100 shadow-md group">
                   <img 
-                    src="/images/foto-pengembang.png" 
+                    src="/images/foto-pengembang.jpeg" 
                     alt="Foto Pengembang"
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     onError={(e) => {
