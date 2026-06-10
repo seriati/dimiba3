@@ -366,7 +366,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* Speaking character voice board widget */}
+            {/* Speaking character voic board widget */}
             <div className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm space-y-4">
               <h4 className="font-baloo font-black text-slate-950 text-2xl md:text-3xl tracking-tight flex items-center gap-2">
                 📣 Sapa Sahabat Hutan Kelayau
