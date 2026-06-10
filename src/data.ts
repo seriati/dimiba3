@@ -29,7 +29,7 @@ export const STORY_CHUNKS: StoryChunk[] = [
     id: 2,
     title: "Masalah Barter: Bertepuk Sebelah Tangan",
     subtitle: "Keinginan Timbal Balik yang Cocok",
-    content: "Suatu hari, Ela Pelatuk 🐦 mengukir sebuah sendok kayu yang sangat halus dan bernilai tinggi. Ela ingin sekali menukar sendok kayunya dengan bunga mawar merah yang harum milik Ke Kelinci 🐇 untuk menghias sarangnya. Namun, Ke Kelinci menolaknya dengan sedih: 'Aduh Ela, aku tidak butuh sendok kayu baru. Aku sangat lapar dan membutuhkan jagung manis!'. Ela Pelatuk menjadi kebingungan. Di sinilah terungkap kelemahan terbesar Barter: barter hanya bisa berjalan lancar bila terjadi 'Double Coincidence of Wants' (Keinginan timbal balik yang saling cocok). Bila kebutuhan salah satu pihak tidak terpenuhi, maka barter akan GAGAL!",
+    content: "Suatu hari, Ela Pelatuk 🐦 mengukir sebuah sendok kayu yang sangat halus dan bernilai tinggi. Ela ingin sekali menukar sendok kayunya dengan bunga mawar merah yang harum milik Ke Kelinci 🐇 untuk menghias sarangnya. Namun, Ke Kelinci menolaknya dengan sedih: 'Aduh Ela, aku tidak butuh sendok kayu baru. Aku sangat lapar dan membutuhkan jagung manis!'. Ela Pelatuk menjadi kebingungan. Di sinilah terungkap kelemahan terbesar Barter: barter hanya bisa berjalan lancar bila terjadi keinginan timbal balik yang saling cocok. Bila kebutuhan salah satu pihak tidak terpenuhi, maka barter akan GAGAL!",
     character: {
       name: "Ela Pelatuk 🐦",
       avatar: "🐦",
