@@ -793,13 +793,14 @@ Terima kasih telah menggunakan media pembelajaran ini. Semoga dapat memberikan p
               </div>
 
               {/* Traditional border illustration container */}
-              <div className="p-3 bg-white border border-dashed border-rose-300 rounded-xl flex items-center justify-center gap-2">
-                <span className="text-base">🤝</span>
-                <span className="text-[10px] font-black tracking-wide text-rose-900 uppercase">TERIMA KASIH</span>
-              </div>
+            <div className="p-3 bg-white border border-dashed border-rose-300 rounded-xl flex items-center justify-center gap-2">
+              <span className="text-base">🤝</span>
+              <span className="text-[10px] font-black tracking-wide text-rose-900 uppercase">TERIMA KASIH</span>
             </div>
-          </motion.div>
-        );
+          </div>  {/* penutup bg-gradient Terima Kasih */}
+        </div>    {/* ← TAMBAHKAN INI: penutup bg-white rounded-3xl utama */}
+      </motion.div>
+    );
 
       default:
         return <div className="p-10 text-center font-bold text-slate-300">🚧 Halaman ini sedang dikembangkan!</div>;
