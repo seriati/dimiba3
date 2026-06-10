@@ -413,34 +413,6 @@ export default function CelenganGame() {
                   </div>
                 </div>
 
-                {/* DAYAK THEMED GRAPHIC TEMPLATE FOR THE SIMULATOR */}
-                <div className="mt-4 p-4 bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-3xl shadow-sm">
-                  <div className="space-y-3">
-                    <div>
-                      <span className="text-[10px] font-black uppercase tracking-widest text-orange-700 bg-orange-100 px-2 py-0.5 rounded-md">
-                        Visual Tradisional Borneo
-                      </span>
-                      <p className="text-[11px] font-bold text-slate-800 mt-2">Celengan Manik Dayak Indonesia</p>
-                    </div>
-
-                    <div className="relative rounded-[2rem] overflow-hidden bg-slate-100 border border-orange-200 shadow-sm">
-                      <img
-                        src={LEVEL_IMAGES[levelIdx]?.src}
-                        alt={LEVEL_IMAGES[levelIdx]?.alt}
-                        className="w-full h-72 md:h-80 object-cover"
-                        onError={(e) => {
-                          e.currentTarget.src = '/images/celengan-dayak.png';
-                        }}
-                        referrerPolicy="no-referrer"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
-                      <div className="absolute left-4 bottom-4 text-white font-black text-sm md:text-base drop-shadow-lg">
-                        Level {levelIdx + 1} / 5
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
               </div>
 
               {/* Feedbacks and Submit Buttons Container */}
