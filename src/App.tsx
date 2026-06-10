@@ -25,6 +25,7 @@ export default function App() {
   const [miniAnswerFeedback, setMiniAnswerFeedback] = useState<'none' | 'success' | 'fail'>('none');
   const [selectedMiniAns, setSelectedMiniAns] = useState<number | null>(null);
   const [showGuide, setShowGuide] = useState(true);
+  const [developerImageLoaded, setDeveloperImageLoaded] = useState(false);
 
   // Audio speech synthesis reading support
   const [isSpeaking, setIsSpeaking] = useState(false);
@@ -713,18 +714,20 @@ export default function App() {
                     src="/images/foto-pengembang.jpeg" 
                     alt="Foto Pengembang"
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                    }}
+                    onLoad={() => setDeveloperImageLoaded(true)}
+                    onError={() => setDeveloperImageLoaded(false)}
                     referrerPolicy="no-referrer"
                   />
                   {/* Decorative avatar label is shown when image is not yet loaded */}
                   <div className="absolute inset-x-0 bottom-0 bg-indigo-600 text-white text-[9px] font-black py-0.5 uppercase tracking-wider z-10">
                     PENGEMBANG
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-tr from-indigo-100 to-indigo-50/50 flex items-center justify-center pointer-events-none">
-                    <span className="text-4xl filter drop-shadow">🎓</span>
-                  </div>
+                  {/* Show fallback icon only when image fails to load */}
+                  {!developerImageLoaded && (
+                    <div className="absolute inset-0 bg-gradient-to-tr from-indigo-100 to-indigo-50/50 flex items-center justify-center pointer-events-none">
+                      <span className="text-4xl filter drop-shadow">🎓</span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="space-y-1">
@@ -764,18 +767,6 @@ Terima kasih telah menggunakan media pembelajaran ini. Semoga dapat memberikan p
                 </div>
               </div>
 
-              {/* TEMPLATE TIPS UNTUK MEMASUKKAN GAMBAR */}
-              <div className="bg-amber-50 border border-amber-200 p-4 rounded-xl space-y-2 text-xs font-semibold text-amber-900">
-                <p className="font-extrabold flex items-center gap-1.5 text-amber-950">
-                  <span>🚀</span> Tips Memasukkan Foto Kamu:
-                </p>
-                <ul className="list-disc leading-relaxed pl-4 space-y-1 text-[11px] text-amber-800 font-bold">
-                  <li>Buat berkas dengan nama <code className="bg-amber-100 px-1 py-0.5 rounded text-amber-950">foto-pengembang.png</code></li>
-                  <li>Simpan di subfolder proyek: <code className="bg-amber-100 px-1 py-0.5 rounded text-amber-950">public/images/foto-pengembang.png</code></li>
-                  <li>Maka fotomu akan otomatis memotong dan berputar anggun di atas lingkaran profil ini!</li>
-                </ul>
-              </div>
-            </div>
 
             {/* Respect the Storyteller / Terima Kasih Section */}
             <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-3xl p-8 border border-rose-100 space-y-5 shadow-sm text-slate-800">
