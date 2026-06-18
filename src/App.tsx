@@ -6,7 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  Home, BookOpen, Coins, BrainCircuit, BookMarked, Target, Bell, Sparkles, Volume2, VolumeX, Play, Pause, ChevronRight, HelpCircle, AlertCircle, ShoppingBag, Award, CheckCircle, User
+  Home, BookOpen, Coins, BrainCircuit, BookMarked, Target, Bell, Sparkles, Volume2, VolumeX, Play, Pause, ChevronRight, HelpCircle, AlertCircle, ShoppingBag, Award, CheckCircle, User, Pencil
 } from 'lucide-react';
 
 import { ActiveTab, StoryChunk } from './types';
